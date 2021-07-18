@@ -1,0 +1,21 @@
+[submodule "services/radit-order-service"]
+	path = services/radit-order-service
+	url = https://github.com/TPriime/radit-order-service
+[submodule "services/radit-transaction-worker"]
+	path = services/radit-transaction-worker
+	url = https://github.com/TPriime/radit-transaction-worker
+[submodule "services/radit-auth-service"]
+	path = services/radit-auth-service
+	url = https://github.com/TPriime/radit-auth-service
+[submodule "services/radit-payment-service"]
+	path = services/radit-payment-service
+	url = https://github.com/TPriime/radit-payment-service
+[submodule "services/radit-product-service"]
+	path = services/radit-product-service
+	url = https://github.com/TPriime/radit-product-service
+[submodule "services/radit-customer-service"]
+	path = services/radit-customer-service
+	url = https://github.com/TPriime/radit-customer-service
+[submodule "services/radit-api-gateway"]
+	path = services/radit-api-gateway
+	url = https://github.com/TPriime/radit-api-gateway
