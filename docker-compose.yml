@@ -1,82 +1,82 @@
 version: "3.8"
 
 services:
-  # auth-service:
-  #   image: radit-auth-service
-  #   ports:
-  #     - "6000:80"
-  #   environment:
-  #     NAME: auth-service
-  #     PORT: 80
-  #     DB_HOST: mongodb
+  auth-service:
+    image: radit-auth-service
+    ports:
+      - "6000:80"
+    environment:
+      NAME: auth-service
+      PORT: 80
+      DB_HOST: mongodb
 
-  # customer-service:
-  #   image: radit-customer-service
-  #   depends_on:
-  #     - mongodb
-  #   ports:
-  #     - "7000:80"
-  #   environment:
-  #     NAME: customer-service
-  #     PORT: 80
-  #     DB_HOST: mongodb
+  customer-service:
+    image: radit-customer-service
+    depends_on:
+      - mongodb
+    ports:
+      - "7000:80"
+    environment:
+      NAME: customer-service
+      PORT: 80
+      DB_HOST: mongodb
 
-  # product-service:
-  #   image: radit-product-service
-  #   depends_on:
-  #     - mongodb
-  #   ports:
-  #     - "8000:80"
-  #   environment:
-  #     NAME: product-service
-  #     PORT: 80
-  #     DB_HOST: mongodb
-  #     RPC_PORT: 8001
+  product-service:
+    image: radit-product-service
+    depends_on:
+      - mongodb
+    ports:
+      - "8000:80"
+    environment:
+      NAME: product-service
+      PORT: 80
+      DB_HOST: mongodb
+      RPC_PORT: 8001
     
-  # payment-service:
-  #   image: radit-payment-service
-  #   depends_on:
-  #     - mongodb
-  #   ports:
-  #     - "9000:80"
-  #   environment:
-  #     NAME: payment-service
-  #     PORT: 80
-  #     DB_HOST: mongodb
-  #     AMQP_HOST: rabbitmq
+  payment-service:
+    image: radit-payment-service
+    depends_on:
+      - mongodb
+    ports:
+      - "9000:80"
+    environment:
+      NAME: payment-service
+      PORT: 80
+      DB_HOST: mongodb
+      AMQP_HOST: rabbitmq
 
-  # order-service:
-  #   image: radit-order-service
-  #   depends_on:
-  #     - mongodb
-  #   ports:
-  #     - "10000:80"
-  #   environment:
-  #     NAME: order-service
-  #     PORT: 80
-  #     DB_HOST: mongodb
-  #     AMQP_HOST: rabbitmq
-  #     RPC_HOST: "localhost:8001"
+  order-service:
+    image: radit-order-service
+    depends_on:
+      - mongodb
+    ports:
+      - "10000:80"
+    environment:
+      NAME: order-service
+      PORT: 80
+      DB_HOST: mongodb
+      AMQP_HOST: rabbitmq
+      RPC_HOST: "localhost:8001"
 
-  # api-gateway:
-  #   image: radit-api-gateway
-  #   ports:
-  #     - "5000:5000"
-  #   environment:
-  #     NAME: api-gateway
-  #     PORT: 5000
-  #     AUTH_SERVICE: auth-service
-  #     CUSTOMER_SERVICE: customer-service
-  #     ORDER_SERVICE: order-service
-  #     PRODUCT_SERVICE: product-service
-  #     PAYMENT_SERVICE: payment-service
+  api-gateway:
+    image: radit-api-gateway
+    ports:
+      - "5000:5000"
+    environment:
+      NAME: api-gateway
+      PORT: 5000
+      AUTH_SERVICE: auth-service
+      CUSTOMER_SERVICE: customer-service
+      ORDER_SERVICE: order-service
+      PRODUCT_SERVICE: product-service
+      PAYMENT_SERVICE: payment-service
 
-  # worker:
-  #   image: radit-worker
-  #   environment:
-  #     NAME: worker
-  #     DB_HOST: mongodb
-  #     AMQP_HOST: rabbitmq
+  worker:
+    image: radit-worker
+    environment:
+      NAME: worker
+      DB_HOST: mongodb
+      AMQP_HOST: rabbitmq
 
   mongodb:
       image: mongo

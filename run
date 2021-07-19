@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+make -C services/radit-api-gateway/
+make -C services/radit-auth-service
+make -C services/radit-customer-service
+make -C services/radit-order-service
+make -C services/radit-payment-service
+make -C services/radit-product-service
+make -C services/radit-api-transaction-worker
+
+docker-compose up
