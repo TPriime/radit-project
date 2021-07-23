@@ -33,4 +33,5 @@ echo
 
 # start up and run
 echo "spawning up containers..."
-docker-compose up | egrep -i 'gateway'
+docker-compose up \
+#| egrep -i 'gateway'
